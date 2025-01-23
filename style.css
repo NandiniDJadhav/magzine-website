@@ -1,0 +1,135 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+.navbar {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .container {
+    display: flex;
+    flex-direction: column; /* Stack logo and links vertically */
+    align-items: flex-start; /* Align items to the left */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: transparent;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+    width: 100%; /* Ensure links take up full width */
+    justify-content: flex-start; /* Align links to the left */
+}
+
+.navbar .nav-links li {
+    margin-left: 20px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #f0a500;
+}
+
+/* Hamburger Menu (Mobile) */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-toggle .hamburger {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    display: block;
+    position: relative;
+}
+
+.nav-toggle .hamburger::after,
+.nav-toggle .hamburger::before {
+    content: '';
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+
+.nav-toggle .hamburger::before {
+    top: -8px;
+}
+
+.nav-toggle .hamburger::after {
+    top: 8px;
+}
+
+/* Section Styles */
+.section {
+    padding: 100px 20px;
+    margin-top: 80px;
+}
+
+.section:nth-child(even) {
+    background: #f4f4f4;
+}
+
+.section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Footer Styles */
+.footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #333;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+}
